@@ -9,10 +9,11 @@ import Alert from "../components/Alert";
 const Contact = () => {
   const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [isLoading, setIsLoaing] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Fixed typo: setIsLoaing -> setIsLoading
   const [currentAnimation, setCurrentAnimation] = useState("idle");
 
   const { alert, showAlert, hideAlert } = useAlert();
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -20,49 +21,50 @@ const Contact = () => {
   const handleFocus = () => setCurrentAnimation("walk");
   const handleBlur = () => setCurrentAnimation("idle");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoaing(true);
+    setIsLoading(true);
     setCurrentAnimation("hit");
 
-    emailjs
-      .send(
+    try {
+      // Send the main email to you
+      await emailjs.send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
-          to_name: "Minh Le",
-          from_email: form.email,
-          to_email: "miquanle1006@gmail.com",
+          name: form.name,
+          // to_name: "Minh Quan Le",
+          email: form.email,
+          // to_email: "miquanle1006@gmail.com",
+          reply_to: form.email, // This will auto-reply to user
           message: form.message,
+          // user_name: form.name, // For personalized auto-reply
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(() => {
-        setIsLoaing(false);
-        showAlert({
-          show: true,
-          text: "Message sent successfully!",
-          type: "success",
-        });
-        setForm({ name: "", email: "", message: "" });
+      );
 
-        setTimeout(() => {
-          hideAlert();
-          setCurrentAnimation("idle");
-          setForm({ name: "", email: "", message: "" });
-        }, [3000]);
-      })
-      .catch((error) => {
-        setIsLoaing(false);
-        setCurrentAnimation("idle");
-        console.log(error);
-        showAlert({
-          show: true,
-          text: "I didn't receive your message",
-          type: "danger",
-        });
+      setIsLoading(false);
+      showAlert({
+        show: true,
+        text: "Message sent successfully! Check your email for confirmation.",
+        type: "success",
       });
+      setForm({ name: "", email: "", message: "" });
+
+      setTimeout(() => {
+        hideAlert();
+        setCurrentAnimation("idle");
+      }, 3000);
+    } catch (error) {
+      setIsLoading(false);
+      setCurrentAnimation("idle");
+      console.log(error);
+      showAlert({
+        show: true,
+        text: "Something went wrong. Please try again.",
+        type: "danger",
+      });
+    }
   };
 
   return (

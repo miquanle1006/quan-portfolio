@@ -1,8 +1,15 @@
 {
   "name": "3d-portfolio",
+  "homepage": "https://miquanle1006.github.io/quan-portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "overrides": {
+    "react-vertical-timeline-component": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,29 +19,31 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.12.1",
-    "@react-spring/three": "^9.7.3",
-    "@react-three/drei": "^9.96.1",
-    "@react-three/fiber": "^8.15.14",
-    "@types/three": "^0.160.0",
-    "dotenv": "^16.3.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.3",
-    "react-vertical-timeline-component": "^3.6.0",
-    "three": "^0.160.0"
+    "@emailjs/browser": "^4.4.1",
+    "@react-spring/three": "^10.0.2",
+    "@react-three/drei": "^10.7.5",
+    "@react-three/fiber": "^9.3.0",
+    "@types/three": "^0.180.0",
+    "dotenv": "^17.2.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.2",
+    "react-vertical-timeline-component": "^3.5.3",
+    "three": "^0.180.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.17",
-    "eslint": "^8.55.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1",
-    "vite": "^5.0.8"
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.35.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13",
+    "vite": "^7.1.5"
   }
 }

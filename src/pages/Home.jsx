@@ -28,10 +28,11 @@ const Home = () => {
     };
   }, [isPlayingMusic]);
 
+  // Adjust island size and position based on screen size
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
-    let screenPosition = [0, -7, -48];
-    let islandRotation = [0.19, 5, 0];
+    let screenPosition = [0, -4, -48];
+    let islandRotation = [0.51, 3, 6.3];
 
     if (window.innerWidth < 768) {
       screenScale = [4.9, 4.9, 4.9];
@@ -41,6 +42,7 @@ const Home = () => {
     return [screenScale, screenPosition, islandRotation];
   };
 
+  // Adjust plane size and position based on screen size
   const adjustPlaneForScreenSize = () => {
     let screenScale, screenPosition;
 
@@ -93,7 +95,7 @@ const Home = () => {
             scale={isPlaneScale}
             position={isPlanePosition}
             isRotating={isRotating}
-            rotation={[0.1, 20.3, 0]}
+            rotation={[0.15, 20.3, 6]}
           />
         </Suspense>
       </Canvas>

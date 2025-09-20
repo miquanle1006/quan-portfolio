@@ -3,6 +3,7 @@ import {
   shopify,
   starbucks,
   tesla,
+  apple,
   windev,
   hip,
   talengen,
@@ -15,6 +16,7 @@ import {
   express,
   git,
   github,
+  goverment,
   html,
   javascript,
   linkedin,
@@ -119,15 +121,27 @@ export const skills = [
 
 export const experiences = [
   {
+    title: "Test Techincian",
+    company_name: "Apple Inc",
+    icon: apple,
+    iconBg: "#FAF9F6",
+    date: "September 2023 - Present",
+    points: [
+      "Develop and maintain Python test scripts to validate hardware reliability across multiple product lines, especially MacOS, and ensure compliance with key Apple requirements.",
+      "Improve hardware test cycle efficiency by 15% by executing automated Python scripts, performing root cause analysis on system logs, and implementing process improvements with the engineering team.",
+      "Accelerate issue resolution by managing defect tracking and documentation within an Agile framework, serving as the key point of contact between QA and engineering teams.",
+    ],
+  },
+  {
     title: "Software Developer Intern",
     company_name: "TalenGen",
     icon: talengen,
     iconBg: "#A02334",
     date: "March 2024 - June 2024",
     points: [
-      "Working in the Product Development team, refining and enhancing all existing features on the Career page using ReactJS, NodeJS, and NoSQL, ensuring they meet user needs and business requirements.",
-      "Designing and optimizing user interfaces to be highly responsive and user-friendly across various platforms, utilizing Figma for prototyping and design consistency.",
-      "Conduct thorough evaluations of current performance metrics and maintain high code quality and optimization standards.",
+      "Enhanced the user experience by building three major interactive features with the MERN stack (MongoDB, Express.js, React, Node.js).",
+      "Streamlined the front-end development workflow by creating a design system in Figma and building a corresponding set of pixel-perfect, responsive React UI components.",
+      "Improved average page load time by 25% across devices by implementing front-end code-splitting in React and optimizing backend NodeJS API queries.",
     ],
   },
   {
@@ -180,6 +194,14 @@ export const socialLinks = [
 ];
 
 export const projects = [
+  {
+    iconUrl: summiz,
+    theme: "btn-back-green",
+    name: "FedBridge",
+    description:
+      "A full-stack application to help laid-off federal employees find private-sector careers.",
+    link: "https:/github.com/QuanLew/Hackathon.git",
+  },
   {
     iconUrl: estate,
     theme: "btn-back-blue",

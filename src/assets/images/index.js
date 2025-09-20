@@ -7,5 +7,17 @@ import hip from "./hip.png";
 import tesla from "./tesla.png";
 import logo from "./logo.svg";
 import talengen from "./talengen.png";
+import apple from "./apple.png";
 
-export { hero, meta, shopify, starbucks, tesla, logo, windev, hip, talengen };
+export {
+  hero,
+  meta,
+  shopify,
+  starbucks,
+  tesla,
+  logo,
+  windev,
+  hip,
+  talengen,
+  apple,
+};

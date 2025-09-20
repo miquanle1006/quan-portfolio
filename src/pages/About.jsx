@@ -30,11 +30,15 @@ const About = () => {
         </p>
       </div>
 
+      {/* My Skills part */}
       <div className="py-10 flex flex-col">
         <h3 className="subhead-text">My Skills</h3>
         <div className="mt-16 flex flex-wrap gap-12">
-          {skills.map((skill) => (
-            <div className="block-container w-20 h-20">
+          {skills.map((skill, index) => (
+            <div
+              key={skill.name || index}
+              className="block-container w-20 h-20"
+            >
               <div className="btn-back rounded-xl" />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
@@ -48,6 +52,7 @@ const About = () => {
         </div>
       </div>
 
+      {/* Experience part */}
       <div className="py-16">
         <h3 className="subhead-text">Work Experience</h3>
         <div className="mt-5 flex flex-col gap-3 text-slate-500">
@@ -56,7 +61,7 @@ const About = () => {
             teaming up with other people. Here's the rundown:
           </p>
         </div>
-
+        {/* Timeline */}
         <div className="mt-12 flex">
           <VerticalTimeline>
             {experiences.map((experience) => (
@@ -96,7 +101,7 @@ const About = () => {
                   {experience.points.map((point, index) => (
                     <li
                       key={`experience-point-${index}`}
-                      className="text-black-500/50 font-normal pl-1 text-sm"
+                      className="text-black-500 font-normal pl-1 text-sm"
                     >
                       {point}
                     </li>
