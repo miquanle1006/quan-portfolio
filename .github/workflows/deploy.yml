@@ -1,9 +1,11 @@
-name: Deploy to GitHub Pages
+name: Deploy React + Vite to GitHub Pages
+
 on:
-    workflow_dispatch: # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch: # Allow manual trigger from GitHub Actions tab
   push:
     branches:
       - main # Set the branch you want to deploy from
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
